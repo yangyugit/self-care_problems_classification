@@ -1,10 +1,21 @@
 # A deep learning method for self-care problems classification using represent learning and focal loss
 
-- Propose a deep learning method consisted of two sub-deep neural networks for children’s self-care problems classification. 
+Highlights:
 
-- The first sub-deep neural network utilizes the triplet loss method to compress the dimensions of the feature and preserve the information as well as the correlation, simultaneously. 
+- Propose a deep learning method consisting of two sub-deep neural networks for the classification of children’s self-care problems. 
 
-- The second sub-network employs a technology called focal loss to handle the class imbalance problem to further improve classification accuracy. 
+- The first sub-deep neural network utilizes the triplet loss method to compress the dimensions of the feature and preserve the information and the correlation, simultaneously. 
+
+- The second sub-network employs a technology called focal loss to handle the class imbalance problem to improve classification accuracy further. 
 
 - The numerical tests show that the proposed model achieves the state-of-the-art classification performance of the children's self-care problems.
 
+Files:
+
+folder SCADI-Dataset contains the children's self-care problems data.
+
+folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features. 
+
+data_view.py presents the statistic information. 
+
+ablation_experiment.py is the python code of ablation experiment. 

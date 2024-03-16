@@ -12,10 +12,10 @@ Highlights:
 
 Files:
 
-folder SCADI-Dataset contains the children's self-care problems data.
+-folder SCADI-Dataset contains the children's self-care problems data.
 
-folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features. 
+-folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features. 
 
-data_view.py presents the statistic information. 
+-data_view.py presents the statistic information. 
 
-ablation_experiment.py is the python code of ablation experiment. 
+-ablation_experiment.py is the python code of ablation experiment. 

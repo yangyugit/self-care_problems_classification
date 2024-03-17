@@ -18,4 +18,7 @@ Files:
 
 - data_view.py presents the statistic information. 
 
-- ablation_experiment.py is the Python code of the ablation experiment. 
+- ablation_experiment.py is the Python code of the ablation experiment.
+- proposed_model.py is the Python code of the proposed model.
+- neural_network.py is the Python code of the neural network.
+- 

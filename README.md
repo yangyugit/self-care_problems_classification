@@ -14,6 +14,15 @@ train.py
 ```
 
 ## Core codes
+loss fucntion formulation
+```python
+xxxx
+```
+network structure
+```python
+xxxx
+```
+hyperparameters
 ```python
 xxxx
 ```

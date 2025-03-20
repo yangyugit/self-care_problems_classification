@@ -19,10 +19,10 @@ xxxx
 ```
 
 ## Notes
-Datasets: 
+Dataset: 
 * SCADI https://archive.ics.uci.edu/dataset/446/scadi
 
-Extends:
+Extend:
 * Nursery https://archive.ics.uci.edu/dataset/76/nursery
 * Maternal Health Risk https://archive.ics.uci.edu/dataset/863/maternal+health+risk
 * Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease

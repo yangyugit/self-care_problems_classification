@@ -1,5 +1,5 @@
 # The experiment results and the corresponding code
-The corresponding code and dataset of the Manuscript THC-241011
+The datasets and code of the Manuscript THC-241011
 
 ## Environment
 * python:

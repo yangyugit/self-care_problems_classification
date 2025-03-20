@@ -2,8 +2,14 @@
 
 ## Environment
 * python:
-
+* torch:
+* torchvision:
+* numpy:
+* pandas:
+  
 ## Model training
+```python
+train.py
 
 
 

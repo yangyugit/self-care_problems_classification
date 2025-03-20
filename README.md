@@ -20,17 +20,16 @@ xxxx
 
 ## Notes
 Datasets: 
-* SCADI https://archive.ics.uci.edu/dataset/446/scadi 
+* SCADI https://archive.ics.uci.edu/dataset/446/scadi
+
+Extends:
 * Nursery https://archive.ics.uci.edu/dataset/76/nursery
 * Maternal Health Risk https://archive.ics.uci.edu/dataset/863/maternal+health+risk
 * Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease
-Files:
-- The folder SCADI-Dataset contains the children's self-care problems data.
-  
+
+Files:  
 - The folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features and presents the corresponding testing result.  Besides, performance_present.py in every dim-XX folder presents the numerical testing result.
-  
 - data_view.py presents the statistic information. 
-  
 - ablation_experiment.py is the Python code of the ablation experiment. Besides, it also gives the average accuracy of the proposed method. 
 - proposed_model.py is the Python code of the proposed model. 
 - neural_network.py is the Python code of the neural network.

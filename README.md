@@ -18,8 +18,7 @@ train.py
 xxxx
 ```
 
-Highlights and Contributions can be seen in the corresponding manuscript (which has been submitted to AEJ). 
-
+## Description of file
 Files:
 - The folder SCADI-Dataset contains the children's self-care problems data.
   

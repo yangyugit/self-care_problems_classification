@@ -1,5 +1,8 @@
 # The experiment results and the corresponding code
 
+## Model training
+'''python3 main.py'''
+
 Highlights and Contributions can be seen in the corresponding manuscript (which has been submitted to AEJ). 
 
 Files:

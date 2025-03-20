@@ -1,5 +1,5 @@
 # The experiment results and the corresponding code
-                                           <font color="#000066">深蓝色文字</font><br /> 
+                                           <color="#000066">深蓝色文字</font><br /> 
 
 ## Environment
 * python:

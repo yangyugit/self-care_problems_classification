@@ -1,5 +1,5 @@
 # The experiment results and the corresponding code
-                                           <color="#000066">深蓝色文字</font><br /> 
+The corresponding code and dataset of the Manuscript THC-241011
 
 ## Environment
 * python:

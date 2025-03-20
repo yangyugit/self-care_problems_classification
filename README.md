@@ -18,7 +18,12 @@ train.py
 xxxx
 ```
 
-## Description of file
+## Notes
+Datasets: 
+* SCADI https://archive.ics.uci.edu/dataset/446/scadi 
+* Nursery https://archive.ics.uci.edu/dataset/76/nursery
+* Maternal Health Risk https://archive.ics.uci.edu/dataset/863/maternal+health+risk
+* Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease
 Files:
 - The folder SCADI-Dataset contains the children's self-care problems data.
   

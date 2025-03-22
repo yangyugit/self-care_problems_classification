@@ -20,7 +20,7 @@ train.py
 loss fucntion formulation
 ```python
 # the triplet_loss function
-def triplet_loss(y_true, y_pred):
+def triplet_loss(y_true, y_pred, margin=0.1):  
     embedding_size = 100
     anchor_out = y_pred[:, 0: embedding_size] 
     positive_out = y_pred[:, embedding_size: embedding_size*2]
@@ -29,8 +29,7 @@ def triplet_loss(y_true, y_pred):
     pos_dist = K.sum(K.abs(anchor_out - positive_out), axis=1)  
     neg_dist = K.sum(K.abs(anchor_out - negative_out), axis=1)  
 
-    probs = K.softmax([pos_dist, neg_dist], axis=0) # softmax([pos_dist, neg_dist])
-    return K.mean(K.abs(probs[0]) + K.abs(1.0 - probs[1]))
+    return K.mean(K.maximum(pos_dist - neg_dist + margin, 0.0))
 
 # the focal loss function
 def focal_loss(y_true, y_pred):

@@ -72,8 +72,11 @@ class_model = Model(input_layer, model_output)
 
 hyperparameters
 ```python
-xxxx
+optimizer="adam"
+epochs=50
+batch_size=32
 ```
+
 augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
 ```python
 data_file = '../dataset/SCADI.csv'

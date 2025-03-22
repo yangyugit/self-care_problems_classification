@@ -29,7 +29,7 @@ final_method.py
 1. loss fucntion formulation
 ```python
 # the triplet_loss function
-def triplet_loss(y_true, y_pred, margin=0.1, embedding_size):  
+def triplet_loss(y_true, y_pred, margin=0.1, embedding_size=100):  
     anchor_out = y_pred[:, 0: embedding_size] 
     positive_out = y_pred[:, embedding_size: embedding_size*2]
     negative_out = y_pred[:, embedding_size*2: embedding_size*3]

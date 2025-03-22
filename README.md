@@ -66,6 +66,8 @@ triplet_model = Model([triplet_model_a, triplet_model_p, triplet_model_n], tripl
 
 triplet_model.compile(loss=triplet_loss, optimizer="adam")
 triplet_model.fit_generator(data_generator(), steps_per_epoch=50, epochs=50)
+
+model_embedings = triplet_model.layers[-2].predict(x_data, verbose=1) # the obtained embeding
 ```
 hyperparameters
 ```python

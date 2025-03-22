@@ -32,6 +32,7 @@ def triplet_loss(y_true, y_pred):
     probs = K.softmax([pos_dist, neg_dist], axis=0) # softmax([pos_dist, neg_dist])
     return K.mean(K.abs(probs[0]) + K.abs(1.0 - probs[1]))
 
+# the focal loss function
 def focal_loss(y_true, y_pred):
     epsilon = 1.e-7
     gamma = 2.0

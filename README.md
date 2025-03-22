@@ -26,7 +26,7 @@ final_method.py
 ```
 
 ## Core codes
-loss fucntion formulation
+1. loss fucntion formulation
 ```python
 # the triplet_loss function
 def triplet_loss(y_true, y_pred, margin=0.1, embedding_size):  
@@ -54,8 +54,8 @@ def focal_loss(y_true, y_pred):
     loss = tf.reduce_mean(fl)
     return loss
 ```
-network structure:
-1. the embedding neural network
+2. network structure:
+* the embedding neural network
 ```python
 input_layer = Input((205))
 x = Dense(200, activation="relu")(input_layer)
@@ -69,7 +69,7 @@ triplet_model_out = Concatenate()([model(triplet_model_a), model(triplet_model_p
 triplet_model = Model([triplet_model_a, triplet_model_p, triplet_model_n], triplet_model_out)
 triplet_model.compile(loss=triplet_loss, optimizer="adam")
 ```
-2. the classification neural network
+* the classification neural network
 ```python
 input_layer = Input((embedding_size))
 midlle_value = Dense(100, activation="relu")(input_layer)
@@ -79,7 +79,7 @@ class_model = Model(input_layer, model_output)
 class_model.compile(loss=focal_loss, optimizer="adam", metrics=['accuracy', f1])
 ```
 
-hyperparameters
+3. hyperparameters
 ```python
 # the hyperparameters of training
 optimizer="adam"
@@ -90,7 +90,7 @@ margin = 0.1
 gamma = 2.0
 ```
 
-augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
+4. augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
 ```python
 data_file = '../dataset/SCADI.csv'
 original_data = pd.read_csv(data_file)
@@ -103,15 +103,15 @@ extend_data = pd.concat([original_data, data0, data1], axis=0)
 ```
 
 ## Notes
-Dataset: 
+1. Dataset: 
 * SCADI https://archive.ics.uci.edu/dataset/446/scadi
 
-Extend:
+2. Extend:
 * Nursery https://archive.ics.uci.edu/dataset/76/nursery
 * Maternal Health Risk https://archive.ics.uci.edu/dataset/863/maternal+health+risk
 * Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease
 
-Descriptions:
+3. Descriptions:
 * The folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features and presents the corresponding testing result.  Besides, performance_present.py in every dim-XX folder presents the numerical testing result.
 * data_view.py presents the statistic information. 
 * ablation_experiment.py is the Python code of the ablation experiment. Besides, it also gives the average accuracy of the proposed method. 

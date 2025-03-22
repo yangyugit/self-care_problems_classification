@@ -49,7 +49,23 @@ def focal_loss(y_true, y_pred):
 network structure:
 1. the embedding neural network
 ```python
-xxxx
+# base model
+embedding_size = 100
+input_layer = Input((205))
+x = Dense(200, activation="relu")(input_layer)
+x = Dense(150, activation="relu")(x)
+x = Dense(100, activation="relu")(x) # embedding size=100
+model = Model(input_layer, x)
+
+# triplet loss model
+triplet_model_a = Input((205))
+triplet_model_p = Input((205))
+triplet_model_n = Input((205))
+triplet_model_out = Concatenate()([model(triplet_model_a), model(triplet_model_p), model(triplet_model_n)])
+triplet_model = Model([triplet_model_a, triplet_model_p, triplet_model_n], triplet_model_out)
+
+triplet_model.compile(loss=triplet_loss, optimizer="adam")
+triplet_model.fit_generator(data_generator(), steps_per_epoch=50, epochs=50)
 ```
 hyperparameters
 ```python

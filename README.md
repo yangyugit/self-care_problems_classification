@@ -67,7 +67,7 @@ triplet_model_p = Input((205))
 triplet_model_n = Input((205))
 triplet_model_out = Concatenate()([model(triplet_model_a), model(triplet_model_p), model(triplet_model_n)])
 triplet_model = Model([triplet_model_a, triplet_model_p, triplet_model_n], triplet_model_out)
-triplet_model.compile(loss=triplet_loss, optimizer="adam")
+triplet_model.compile(loss=triplet_loss, optimizer="adam")  # use the triplet loss
 ```
 * the classification neural network
 ```python
@@ -76,7 +76,7 @@ midlle_value = Dense(100, activation="relu")(input_layer)
 midlle_value = Dense(50, activation="relu")(midlle_value)
 model_output = Dense(7, activation="softmax")(midlle_value)
 class_model = Model(input_layer, model_output)
-class_model.compile(loss=focal_loss, optimizer="adam", metrics=['accuracy', f1])
+class_model.compile(loss=focal_loss, optimizer="adam", metrics=['accuracy', f1])  # use the focal loss
 ```
 
 3. hyperparameters

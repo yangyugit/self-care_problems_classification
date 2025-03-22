@@ -19,9 +19,35 @@ train.py
 ## Core codes
 loss fucntion formulation
 ```python
-xxxx
+# the triplet_loss function
+def triplet_loss(y_true, y_pred):
+    embedding_size = 100
+    anchor_out = y_pred[:, 0: embedding_size] 
+    positive_out = y_pred[:, embedding_size: embedding_size*2]
+    negative_out = y_pred[:, embedding_size*2: embedding_size*3]
+    
+    pos_dist = K.sum(K.abs(anchor_out - positive_out), axis=1)  
+    neg_dist = K.sum(K.abs(anchor_out - negative_out), axis=1)  
+
+    probs = K.softmax([pos_dist, neg_dist], axis=0) # softmax([pos_dist, neg_dist])
+    return K.mean(K.abs(probs[0]) + K.abs(1.0 - probs[1]))
+
+def focal_loss(y_true, y_pred):
+    epsilon = 1.e-7
+    gamma = 2.0
+    alpha = tf.cast(alpha_0, tf.float32)
+
+    y_true = tf.cast(y_true, tf.float32)
+    y_pred = tf.clip_by_value(y_pred, epsilon, 1. - epsilon)
+    y_t = tf.multiply(y_true, y_pred) + tf.multiply(1-y_true, 1-y_pred)
+    ce = -tf.math.log(y_t)
+    weight = tf.pow(tf.subtract(1., y_t), gamma)
+    fl = tf.matmul(tf.multiply(weight, ce), alpha)
+    loss = tf.reduce_mean(fl)
+    return loss
 ```
-network structure
+network structure:
+1. the embedding neural network
 ```python
 xxxx
 ```

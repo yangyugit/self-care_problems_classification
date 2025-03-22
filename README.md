@@ -29,6 +29,17 @@ hyperparameters
 ```python
 xxxx
 ```
+augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
+```python
+data_file = '../dataset/SCADI.csv'
+original_data = pd.read_csv(data_file)
+
+data0 = original_data.loc[original_data['Gender'] == 0]
+data0.loc[:, 'Gender'] = 1
+data1 = original_data.loc[original_data['Gender'] == 1]
+data1.loc[:, 'Gender'] = 0
+extend_data = pd.concat([original_data, data0, data1], axis=0)
+```
 
 ## Notes
 Dataset: 

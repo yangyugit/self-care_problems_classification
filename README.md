@@ -11,9 +11,18 @@ The datasets and code of the Manuscript THC-241011
 * scikit-learn: 0.24.2
 * matplotlib: 3.3.4
   
-## Model training
+## Main procedure
+1. view the detials of the dataset
 ```python
 train.py
+```
+2. main code
+```python
+final_method.py
+```
+3. performance
+```python
+final_method.py
 ```
 
 ## Core codes

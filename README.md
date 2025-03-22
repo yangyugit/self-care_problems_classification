@@ -29,8 +29,7 @@ final_method.py
 loss fucntion formulation
 ```python
 # the triplet_loss function
-def triplet_loss(y_true, y_pred, margin=0.1):  
-    embedding_size = 100
+def triplet_loss(y_true, y_pred, margin=0.1, embedding_size):  
     anchor_out = y_pred[:, 0: embedding_size] 
     positive_out = y_pred[:, embedding_size: embedding_size*2]
     negative_out = y_pred[:, embedding_size*2: embedding_size*3]
@@ -58,7 +57,6 @@ def focal_loss(y_true, y_pred):
 network structure:
 1. the embedding neural network
 ```python
-embedding_size = 100
 input_layer = Input((205))
 x = Dense(200, activation="relu")(input_layer)
 x = Dense(150, activation="relu")(x)
@@ -73,7 +71,7 @@ triplet_model.compile(loss=triplet_loss, optimizer="adam")
 ```
 2. the classification neural network
 ```python
-input_layer = Input((embedding_size)) # embedding size=100
+input_layer = Input((embedding_size))
 midlle_value = Dense(100, activation="relu")(input_layer)
 midlle_value = Dense(50, activation="relu")(midlle_value)
 model_output = Dense(7, activation="softmax")(midlle_value)

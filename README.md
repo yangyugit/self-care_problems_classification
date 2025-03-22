@@ -62,7 +62,7 @@ embedding_size = 100
 input_layer = Input((205))
 x = Dense(200, activation="relu")(input_layer)
 x = Dense(150, activation="relu")(x)
-x = Dense(100, activation="relu")(x)
+x = Dense(embedding_size, activation="relu")(x)
 model = Model(input_layer, x)
 triplet_model_a = Input((205))
 triplet_model_p = Input((205))

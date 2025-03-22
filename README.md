@@ -80,11 +80,15 @@ class_model.compile(loss=focal_loss, optimizer="adam", metrics=['accuracy', f1])
 ```
 
 hyperparameters
+1. for neural network training
 ```python
 optimizer="adam"
 epochs=50
 batch_size=32
 ```
+2. for the loss function
+margin of the triplet loss is 0.1
+gamma of the focal loss is 2.0
 
 augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
 ```python

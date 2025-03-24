@@ -7,7 +7,7 @@ The datasets and code of the Manuscript THC-241011
 * keras-applications: 1.0.8
 * keras-preprocessing: 1.1.2
 * numpy: 1.19.2
-* pandas: 0.20.3
+* pandas: 1.3.5
 * scikit-learn: 0.24.2
 * matplotlib: 3.3.4
   

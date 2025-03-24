@@ -2,12 +2,10 @@
 The datasets and code of the Manuscript THC-241011
 
 ## Environment
-* python: 3.7.1
+* python: 3.6.13
 * tensorflow: 2.0.0
-* keras-applications: 1.0.8
-* keras-preprocessing: 1.1.2
-* numpy: 1.19.2
-* pandas: 1.3.5
+* numpy: 1.19.5
+* pandas: 1.1.5
 * scikit-learn: 0.24.2
 * matplotlib: 3.3.4
   

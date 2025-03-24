@@ -2,7 +2,7 @@
 The datasets and code of the Manuscript THC-241011
 
 ## Environment
-* python: 3.6
+* python: 3.7.1
 * tensorflow: 2.0.0
 * keras-applications: 1.0.8
 * keras-preprocessing: 1.1.2

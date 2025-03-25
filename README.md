@@ -1,5 +1,5 @@
 # Code, Datasets, and Results
-The datasets and code of the Manuscript THC-241011
+The datasets and codes of the Manuscript THC-241011
 
 ## Environment
 * python: 3.6.13
@@ -9,33 +9,43 @@ The datasets and code of the Manuscript THC-241011
 * scikit-learn: 0.24.2
 * matplotlib: 3.3.4
   
-## Main procedure
-1. view the detials of the dataset
+## Main procedure (in the first level of the "self-care" folder)
+1. view the details of the dataset (contains the detailed information of the samples in the SCADI dataset)
 ```python
-train.py
+data_view.py
 ```
-2. main code
+2. main code (including the training and validation of the proposed neural network)
 ```python
-final_method.py
+Example_of_proposed_method_10_fold.py
 ```
-3. performance
+3. performances (presenting the 10-fold performances in 34, 56, and 205 dimensions of the embedding feature)
 ```python
-final_method.py
+validation_present.py
+```
+4. ablation (showing the effects of the embedding neural network (the triplet loss function is utilized) and the classification neural network (the focal loss function is utilized))
+```python
+ablation_experiment.py
+```
+5. SHAP analysis (presenting the effect of each feature in the classification result and helping understand the internal logic of the proposed neural network)
+```python
+SHAP_analysis.py
 ```
 
 ## Core codes
 1. loss fucntion formulation
 ```python
 # the triplet_loss function
-def triplet_loss(y_true, y_pred, margin=0.1, embedding_size=100):  
-    anchor_out = y_pred[:, 0: embedding_size] 
+def triplet_loss(y_true, y_pred):
+    embedding_size = 100  # can be changed according to the situation
+    anchor_out = y_pred[:, 0: embedding_size]
     positive_out = y_pred[:, embedding_size: embedding_size*2]
     negative_out = y_pred[:, embedding_size*2: embedding_size*3]
-    
-    pos_dist = K.sum(K.abs(anchor_out - positive_out), axis=1)  
-    neg_dist = K.sum(K.abs(anchor_out - negative_out), axis=1)  
 
-    return K.mean(K.maximum(pos_dist - neg_dist + margin, 0.0))
+    pos_dist = K.sum(K.abs(anchor_out - positive_out), axis=1)
+    neg_dist = K.sum(K.abs(anchor_out - negative_out), axis=1)
+
+    probs = K.softmax([pos_dist, neg_dist], axis=0)
+    return K.mean(K.abs(probs[0]) + K.abs(1.0 - probs[1]))
 
 # the focal loss function
 def focal_loss(y_true, y_pred):
@@ -79,13 +89,9 @@ class_model.compile(loss=focal_loss, optimizer="adam", metrics=['accuracy', f1])
 
 3. hyperparameters
 ```python
-# the hyperparameters of training
 optimizer="adam"
 epochs=50
 batch_size=32
-# the hyperparameters of the triplet loss and focal loss functions
-margin = 0.1
-gamma = 2.0
 ```
 
 4. augmentation technique(e.g., increasing the dataset by duplicating samples based on gender)
@@ -110,10 +116,5 @@ extend_data = pd.concat([original_data, data0, data1], axis=0)
 * Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease
 
 3. Descriptions:
-* The folder dim-XX contains the extracted XX dimensions of features. Ex. dim-20 represents the folder containing the extracted 20 dimensions of features and presents the corresponding testing result.  Besides, performance_present.py in every dim-XX folder presents the numerical testing result.
-* data_view.py presents the statistic information. 
-* ablation_experiment.py is the Python code of the ablation experiment. Besides, it also gives the average accuracy of the proposed method. 
-* proposed_model.py is the Python code of the proposed model. 
-* neural_network.py is the Python code of the neural network.
-* neural_network_with_tripletloss.py is the Python code of the neural network and the tripletloss function is the loss function.
-* neural_network_with_focal.py is the Python code of the neural network and the focal method is utilized.
+* For the SCADI, we proposed a novel deep learning method for the classification of the children's self-care problems. The corresponding dataset can be found in the "dataset" folder. The example code is included in the first level of the "self-care" folder. Besides, other experimential codes are presented in the "dim-xx" folder, where "xx" means the dimension of the embedding feature.
+* For the other similar datasets (i.e., the Nursery, the Maternal Health Risk, and the Heart Disease), the corresponding datasets can be found in the "dataset" folder. Besides, the corresponding codes are also included in the "nursery", "maternal-health-risk", and "heart-disease" folders, respectively. Additionally, the 

@@ -110,11 +110,10 @@ extend_data = pd.concat([original_data, data0, data1], axis=0)
 1. Dataset: 
 * SCADI https://archive.ics.uci.edu/dataset/446/scadi
 
-2. Extend:
+2. Extend datasets:
 * Nursery https://archive.ics.uci.edu/dataset/76/nursery
-* Maternal Health Risk https://archive.ics.uci.edu/dataset/863/maternal+health+risk
-* Heart Disease https://archive.ics.uci.edu/dataset/45/heart+disease
+* Breast Cancer https://archive.ics.uci.edu/dataset/14/breast+cancer
 
 3. Descriptions:
 * For the SCADI, we proposed a novel deep learning method for the classification of the children's self-care problems. The corresponding dataset can be found in the "dataset" folder. The example code is included in the first level of the "self-care" folder. Besides, other experimential codes are presented in the "dim-xx" folder, where "xx" means the dimension of the embedding feature.
-* For the other similar datasets (i.e., the Nursery, the Maternal Health Risk, and the Heart Disease), the corresponding datasets can be found in the "dataset" folder. Besides, the corresponding codes are also included in the "nursery", "maternal-health-risk", and "heart-disease" folders, respectively. Additionally, the 
+* For the other similar datasets (i.e., the Nursery and the Breast Cancer), the corresponding datasets can be found in the "dataset" folder. Besides, the corresponding codes are also included in the "nursery" and "breast_cancer" folders, respectively. 

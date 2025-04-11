@@ -30,6 +30,12 @@ ablation_experiment.py
 ```python
 SHAP_analysis.py
 ```
+6. The effect of the augmentation method (e.g., increasing the dataset by duplicating samples based on gender) to the classification performance of the children's self-care problems.
+```python
+augmentation_performance.py
+
+no_augment_performance.py
+```
 
 ## Core codes
 1. loss fucntion formulation
